@@ -16,7 +16,7 @@ export default function ProjectView() {
     name: "",
     description: "",
     isActive: true,
-    createdBy: '66449207-dc1d-438a-84fd-a3c154b24c62'
+    createdBy: ''
 
   });
 

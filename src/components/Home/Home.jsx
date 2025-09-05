@@ -27,7 +27,7 @@ export default function Home() {
     // Assign modal state (Radix)
     const [assignOpen, setAssignOpen] = React.useState(false);
     const [selectedProject, setSelectedProject] = React.useState(null);
-    const [selectedUsers, setSelectedUsers] = React.useState([]); 
+    const [selectedUsers, setSelectedUsers] = React.useState([]);
     const [selectAll, setSelectAll] = React.useState(false);
 
     const {
@@ -118,27 +118,27 @@ export default function Home() {
         }
     };
 
-const handleAssign = async () => {
-  if (!selectedProject || !users) return;
+    const handleAssign = async () => {
+        if (!selectedProject || !users) return;
 
-  try {
-    const payload = users.map((u) => ({
-      userId: u.id,
-      checked: selectedUsers.includes(u.id),
-    }));
+        try {
+            const payload = users.map((u) => ({
+                userId: u.id,
+                checked: selectedUsers.includes(u.id),
+            }));
 
-    await assignMutation.mutateAsync({
-      projectId: selectedProject.id,
-      assignments: payload, 
-    });
+            await assignMutation.mutateAsync({
+                projectId: selectedProject.id,
+                assignments: payload,
+            });
 
-    setAssignOpen(false);
-    setSelectedUsers([]);
-    setSelectAll(false);
-  } catch (err) {
-    console.error("Assign failed", err);
-  }
-};
+            setAssignOpen(false);
+            setSelectedUsers([]);
+            setSelectAll(false);
+        } catch (err) {
+            console.error("Assign failed", err);
+        }
+    };
 
 
     return (
