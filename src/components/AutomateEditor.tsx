@@ -98,7 +98,7 @@ const AutomateEditor: React.FC<Props> = ({ scriptId }) => {
       });
       return rest;
     }),
-  [actions]);
+    [actions]);
 
   const save = async () => {
     if (!title.trim()) return toast.error('Title is required');
@@ -138,7 +138,7 @@ const AutomateEditor: React.FC<Props> = ({ scriptId }) => {
 
   /* JSX */
   return (
-    <div className="min-vh-100 min-vw-100 d-flex flex-column bg-gradient bg-body-tertiary">
+    <div className="w-100 d-flex flex-column bg-gradient bg-body-tertiary">
       <ToastContainer position="bottom-right" />
 
       {/* Header */}

@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { ActionPayload } from '../types';
+import {BASE_URL} from "./API/endpoints.jsx"
 
-const BASE_URL = 'http://localhost:3001';
+
 
 export const fetchMethods = async (): Promise<string[]> => {
   const { data } = await axios.get(`${BASE_URL}/auto-process/methods`);
